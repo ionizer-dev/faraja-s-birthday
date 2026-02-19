@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HAve a blast 💃</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Evolution of Faraja🤣🤣</h1>
+        <p class="message">
+             Kamoja kama siangalii🤦‍♂️
+        </p>
+        <div class="carousel">
+            <img id="carousel-image" src="image001.jpg" alt="Memory">
+        </div>
+
+        <br>
+        <button class="btn" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <script>
+        
+        const images = [
+            "image001.jpg",
+            "image002.jpg",
+            "image003.jpg",
+             "image001.jpg",
+            "image002.jpg",
+            "image003.jpg"
+        ];
+
+        let currentIndex = 0;
+        const carouselImage = document.getElementById("carousel-image");
+
+        function changeSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            carouselImage.style.opacity = 0;
+
+            setTimeout(() => {
+                carouselImage.src = images[currentIndex];
+                carouselImage.style.opacity = 1;
+            }, 400); 
+        }
+
+        
+        setInterval(changeSlide, 3000);
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
